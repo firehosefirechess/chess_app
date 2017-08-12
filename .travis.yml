@@ -1,0 +1,14 @@
+language: ruby
+cache: bundler
+rvm:
+- 2.2.7
+- 2.3.1
+- 2.3.4
+- 2.4.1
+before_script:
+ - bundle exec rake db:create db:migrate db:seed
+script:
+- bundle exec rspec
+- bundle exec rake rubocop
+services:
+- postgresql
