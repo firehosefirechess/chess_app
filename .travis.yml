@@ -12,3 +12,7 @@ script:
 - bundle exec rake rubocop
 services:
 - postgresql
+deploy:
+  provider: heroku
+  api_key:
+    secure: "33b43da3-bf16-4c42-b9e6-f6f43f25bbff"
