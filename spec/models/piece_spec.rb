@@ -1,5 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Piece, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+ 
+
+  describe "Pawn type" do
+    it "moves up 1 or 2 squares" do
+      
+    end
+
+    it "captures diagonally" do
+      
+    end
+  end
+
 end
+
+

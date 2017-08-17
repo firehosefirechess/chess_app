@@ -1,4 +1,6 @@
 FactoryGirl.define do
+  factory :pawn do
+  end
   factory :piece do
     type ""
   end
