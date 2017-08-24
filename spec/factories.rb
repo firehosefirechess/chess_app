@@ -1,18 +1,16 @@
 FactoryGirl.define do
+  factory :game do
+  end
   factory :king do
-
   end
 
   factory :queen do
-
   end
 
   factory :bishop do
-
   end
 
   factory :knight do
-
   end
 
   factory :rook do
@@ -25,6 +23,8 @@ FactoryGirl.define do
 
   factory :piece do
     type ""
+    color ""
+    association :game
   end
 
   factory :user do
