@@ -1,7 +1,8 @@
 class Piece < ApplicationRecord
-  belongs_to :player
+  # belongs_to :player # no player model yet
   belongs_to :game
-
+  validates :color, presence: true
+  validates :type, presence: true
   # def color
   # end
   #

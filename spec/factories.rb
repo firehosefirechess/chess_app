@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :game do
+    
+  end
   factory :king do
 
   end
@@ -25,6 +28,8 @@ FactoryGirl.define do
 
   factory :piece do
     type ""
+    color ""
+    association :game
   end
 
   factory :user do
