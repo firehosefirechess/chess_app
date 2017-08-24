@@ -14,22 +14,20 @@ FactoryGirl.define do
   end
 
   factory :rook do
-
   end
 
   factory :pawn do
-    
   end
 
   factory :piece do
-    type ""
-    color ""
+    type ''
+    color ''
     association :game
   end
 
   factory :user do
     sequence :email do |n|
-      "dummyEmail#{n}@gmail.com"
+      'dummyEmail#{n}@gmail.com'
     end
     password 'secretPassword'
     password_confirmation 'secretPassword'

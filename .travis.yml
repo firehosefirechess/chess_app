@@ -1,14 +1,14 @@
 language: ruby
 cache: bundler
 rvm:
-- 2.4.1
+  - 2.4.1
 before_script:
- - bundle exec rake db:create db:migrate db:seed
+  - bundle exec rake db:create db:migrate db:seed
 script:
-- bundle exec rspec
-- bundle exec rubocop
+  - bundle exec rspec
+  - bundle exec rubocop -EDS
 services:
-- postgresql
+  - postgresql
 deploy:
   provider: heroku
   api_key:

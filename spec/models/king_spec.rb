@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe King, type: :model do
   let(:king) { FactoryGirl.build :king }
+
   it 'is a Piece type' do
     expect(king).to be_a_kind_of(Piece)
   end
