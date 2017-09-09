@@ -66,5 +66,26 @@ RSpec.describe Piece, type: :model do
         end
       end
     end
+
+    context 'when there is a piece of oposite color in the way' do
+      let(:game) { FactoryGirl.create :game }
+      let(:piece) { FactoryGirl.create :piece, game: game,  x_position: 3, y_position: 4 }
+
+      context 'when the destination is above me and there is a piece in the way' do
+        let!(:obstructing_piece) { FactoryGirl.create :piece, game: game, color: "black", x_position: 3, y_position: 4 }
+
+        it 'is not ok to move when there is piece of oposite color there' do
+          expect(piece.vertical_obstruction?(5)).to eq false
+        end
+      end
+
+      context 'when the destination is below me and there is a piece in the way' do
+        let!(:obstructing_piece) { FactoryGirl.create :piece, game: game, color: "black", x_position: 3, y_position: 2 }
+
+        it 'is ok to move when there is piece of oposite color there' do
+          expect(piece.vertical_obstruction?(1)).to eq false
+        end
+      end
+    end
   end
 end
