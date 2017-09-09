@@ -28,12 +28,22 @@ class Piece < ApplicationRecord
   # def capture(x,y)
   # end
 
+
   def vertical_obstruction?(destination_y)
     range = self.y_position < destination_y ? (self.y_position..destination_y) : (destination_y..self.y_position)
     game.pieces.where(
         color: self.color,
         x_position: self.x_position, 
         y_position: range
+      ).where.not(id: self.id).any?
+  end
+  
+  def horizontal_obstruction?(destination_x)
+    range = self.x_position < destination_x ? (self.x_position..destination_x) : (destination_x..self.x_position)
+    game.pieces.where(
+        color: self.color,
+        x_position: range, 
+        y_position: self.y_position
       ).where.not(id: self.id).any?
   end
 end
