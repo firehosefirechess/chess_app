@@ -20,8 +20,8 @@ FactoryGirl.define do
   end
 
   factory :piece do
-    type ''
-    color ''
+    type 'Pawn'
+    color 'white'
     association :game
   end
 

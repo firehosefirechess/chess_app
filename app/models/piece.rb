@@ -3,6 +3,10 @@ class Piece < ApplicationRecord
   belongs_to :game
   validates :color, presence: true
   validates :type, presence: true
+
+  scope :white, ->() { where(color: 'white') }
+  scope :black, ->() { where(color: 'black') }
+
   # def color
   # end
   #
@@ -23,4 +27,13 @@ class Piece < ApplicationRecord
 
   # def capture(x,y)
   # end
+
+  def vertical_obstruction?(destination_y)
+    range = self.y_position < destination_y ? (self.y_position..destination_y) : (destination_y..self.y_position)
+    game.pieces.where(
+        color: self.color,
+        x_position: self.x_position, 
+        y_position: range
+      ).where.not(id: self.id).any?
+  end
 end
