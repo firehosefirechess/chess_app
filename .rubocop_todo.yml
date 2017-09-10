@@ -58,7 +58,7 @@ Lint/UnusedBlockArgument:
 # Offense count: 4
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
-  Max: 136
+  Max: 250
 
 # Offense count: 24
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
