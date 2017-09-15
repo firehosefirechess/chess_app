@@ -15,12 +15,12 @@ class Piece < ApplicationRecord
   # def move(row,col)
   # end
 
-  def obstructed?(dest_row, dest_col)
-    if dest_row == self.x_position
+  def obstructed?(destination_x, destination_y)
+    if destination_x == self.x_position
       horizontal_obstruction?
-    elsif dest_col == self.y_position
+    elsif destination_y == self.y_position
       vertical_obstruction?
-    elsif (dest_row - self.x_position).abs == (dest_col - self.y_position).abs
+    elsif (destination_x - self.x_position).abs == (destination_y - self.y_position).abs
       diagonal_obstruction?
     else
       'Invalid input'
