@@ -58,13 +58,13 @@ Lint/UnusedBlockArgument:
 # Offense count: 4
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
-  Max: 136
+  Max: 500
 
 # Offense count: 24
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
 Metrics/LineLength:
-  Max: 124
+  Max: 200
 
 # Offense count: 8
 RSpec/LetSetup:
